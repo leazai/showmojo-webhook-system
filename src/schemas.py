@@ -42,7 +42,7 @@ class WebhookPayload(BaseModel):
     event: EventData
 
     class Config:
-        populate_by_name = True
+        allow_population_by_field_name = True
 
 
 class WebhookResponse(BaseModel):
@@ -64,7 +64,7 @@ class EventResponse(BaseModel):
     received_at: datetime
 
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 
 class ShowingResponse(BaseModel):
@@ -89,7 +89,7 @@ class ShowingResponse(BaseModel):
     updated_at: datetime
 
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 
 class ListingResponse(BaseModel):
@@ -102,7 +102,7 @@ class ListingResponse(BaseModel):
     total_showings: int
 
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 
 class ProspectResponse(BaseModel):
@@ -116,7 +116,7 @@ class ProspectResponse(BaseModel):
     total_showings: int
 
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 
 class PaginatedResponse(BaseModel):
